@@ -1,0 +1,38 @@
+.container{
+    /* border: 1px solid;    */
+    height: 400px;
+}
+
+.TaskBox{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    grid-template-rows: auto;
+    gap: 25px;
+}
+.ParentTaskBox{
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    border: 1px solid lightgray;
+    margin-top: 50px;
+    gap: 25px;
+    align-items: center;
+    padding: 15px;
+}
+.count{
+    border: 1px solid lightgray;
+    margin: auto;
+    width: 10%;
+    font-size: 30px;
+}
+.IncDec{
+    display: flex;
+    /* border: 1px solid; */
+    width: fit-content;
+    gap: 15px;
+    margin: auto;
+    margin-top: 30px;
+}
+.ParentTop{
+    margin-top: 60px;
+}
