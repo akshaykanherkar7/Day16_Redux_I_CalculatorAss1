@@ -35,7 +35,13 @@ export const reducer = (state, action) => {
 
     case DIVISON: {
       state.count = state.count / action.payload;
-      return { ...state };
+      if (state.count === Infinity ) {
+        alert("Error in Division");
+        state.count = 0;
+        return { ...state };
+      } else {
+        return { ...state };
+      }
     }
     default: {
       return state;

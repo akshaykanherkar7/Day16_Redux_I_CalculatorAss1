@@ -14,7 +14,7 @@ import {
 const Counter = () => {
   const dispach = useDispatch(0);
   const count = useSelector((state) => state.count);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   return (
     <div className={styles.container}>
       <div className={styles.ParentTop}>
