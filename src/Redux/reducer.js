@@ -4,17 +4,11 @@ import {
   COUNTER_INCREMENT,
   DIVISON,
   MULTIPLICATION,
-  SET_INPUT,
   SUBSTRACTION,
 } from "./actionType";
 
 export const reducer = (state, { type, payload }) => {
   switch (type) {
-    case SET_INPUT: {
-      state.input_value = payload;
-      break;
-      // return { ...state };
-    }
     case COUNTER_INCREMENT: {
       state.count++;
       break;

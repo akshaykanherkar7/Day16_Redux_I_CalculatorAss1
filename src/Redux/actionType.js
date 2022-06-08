@@ -5,4 +5,3 @@ export const ADDITION = "ADDITION";
 export const SUBSTRACTION = "SUBSTRACTION";
 export const MULTIPLICATION = "MULTIPLICATION";
 export const DIVISON = "DIVISON";
-export const SET_INPUT = "SET_INPUT";

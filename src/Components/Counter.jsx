@@ -1,5 +1,5 @@
 import { Button, Input } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../Components/Counter.module.css";
 import {
@@ -8,13 +8,13 @@ import {
   divide,
   increment,
   muliplication,
-  set_input,
   substraction,
 } from "../Redux/action";
 
 const Counter = () => {
   const dispach = useDispatch(0);
-  const { count, input_value } = useSelector((state) => state);
+  const [value, setValue] = useState("");
+  const { count } = useSelector((state) => state);
   return (
     <div className={styles.container}>
       <div className={styles.ParentTop}>
@@ -42,13 +42,14 @@ const Counter = () => {
           placeholder="Value"
           size="md"
           style={{ width: "90px" }}
-          onChange={(e) => dispach(set_input(Number(e.target.value)))}
+          value={value}
+          onChange={(e) => setValue(Number(e.target.value))}
         />
         <div className={styles.TaskBox}>
           <Button
             colorScheme="teal"
             size="lg"
-            onClick={() => dispach(addition(input_value))}
+            onClick={() => dispach(addition(value))}
           >
             Add
           </Button>
@@ -56,7 +57,7 @@ const Counter = () => {
           <Button
             colorScheme="teal"
             size="lg"
-            onClick={() => dispach(muliplication(input_value))}
+            onClick={() => dispach(muliplication(value))}
           >
             Multiply
           </Button>
@@ -64,7 +65,7 @@ const Counter = () => {
           <Button
             colorScheme="teal"
             size="lg"
-            onClick={() => dispach(substraction(input_value))}
+            onClick={() => dispach(substraction(value))}
           >
             Substract
           </Button>
@@ -72,7 +73,7 @@ const Counter = () => {
           <Button
             colorScheme="teal"
             size="lg"
-            onClick={() => dispach(divide(input_value))}
+            onClick={() => dispach(divide(value))}
           >
             Divide
           </Button>
